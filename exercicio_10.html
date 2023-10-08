@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <script language="javascript">
+    /*10. Escrever um algoritmo que lê uma quantidade informada inicialmente de notas de
+alunos da disciplina de Lógica. Para cada aluno são lidas quatro (4) notas variando de
+zero (0) a dez (10). Para ser aprovado o aluno necessita de média igual ou superior a
+seis (6). Ler as notas, calcular a média e armazenar em uma matriz (Vetor
+bidimensional). Considere o índice da linha da matriz como o número do aluno na chamada.
+Após o cálculo da média, ler os dados e escrever: “O Aluno y foi Aprovado
+(ou Reprovado) com média x,xx”. No final informar:
+a. quantos alunos foram aprovados,
+b. quantos alunos foram reprovados,
+c. qual a porcentagem de alunos aprovados.*/
+        let quantidadeAlunos = +prompt("Digite a quantidade de alunos")
+        let notas = []
+        let aprovados = 0
+        let reprovados = 0
+        for (let i = 0; i < quantidadeAlunos; i++){
+            let alunoNotas = []
+            let somaNotas = 0
+            for (let j = 0; j < 4; j++){
+                let nota = +prompt("Digite a nota " + (j + 1) + " do aluno " + (i +1))
+                alunosNotas.push(nota)
+                somaNotas = somaNotas + nota
+            }
+            let media = somaNotas/4
+            notas.push(alunoNotas)
+            if (media >= 6){
+                alert ("O aluno " + (i + 1) + " foi aprovado com média " + media)
+                aprovados++
+            }else {
+                alert ("O aluno " + (i + 1) + " foi aprovado com média " + media)
+                reprovados++
+            }
+        }
+        let porcentagemAprovados = aprovados / quantidadeAlunos * 100
+        alert ("O número de alunos aprovados foi: " + aprovados)
+        alert ("O número de alunos reprovados foi: " + reprovados)
+        alert ("A porcentagem de alunos aprovados foi: " + porcentagemAprovados + "%")
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+    </head>
+    <body></body>
+</html>

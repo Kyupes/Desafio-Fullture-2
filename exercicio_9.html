@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <script language="javascript">
+    /*9. Escrever um algoritmo que lê uma quantidade não informada de dados de pessoas
+que estão sendo monitoradas no posto de saúde. Para cada pessoa é anotada o sexo
+(M ou F) e a altura (em metros), que é fornecida via teclado, sendo que a altura igual
+a zero informa o final da leitura. Armazenar as informações em vetores e
+posteriormente, calcule e escreva:
+a. A maior altura informada,
+b. A média das alturas das mulheres,
+c. A quantidade de homens,
+d. A menor altura dos homens.*/
+    let quantidadeH = 0
+    let quantidadeM = 0
+    let maiorAltura = 0
+    let alturas = []
+    let sexos = []
+    let somaAlturaMulheres = 0
+    let menorAlturaHomens = Infinity
+        while (true){
+            let sexo = prompt("Digite o sexo da pessoa (M/F)")
+            if(sexo.toLowerCase() === "m"){
+                quantidadeH++
+            }
+            else if(sexo.toLowerCase() === "f"){
+                quantidadeM++
+            }
+            else {
+                alert ("Sexo inválido, digite 'M' ou 'F'")
+                continue
+            }
+            let altura = +prompt("Digite a altura da pessoa (seguindo o exemplo: 1 metro e oitenta = 1.80) e caso deseje encerrar o inserimento de dados, digite 0")
+            if (altura === 0){
+                break
+            }
+            if (altura > maiorAltura){
+                maiorAltura = altura
+            }
+            alturas.push(altura)
+            sexos.push(sexo)
+            if (sexo.toLowerCase() === "f"){
+                somaAlturaMulheres = somaAlturaMulheres + altura
+            }else if (sexo.toLowerCase() === "m"){
+                if (menorAlturaHomens > altura){
+                    menorAlturaHomens = altura
+                }
+            }
+            }
+            let mediaAlturaMulheres = somaAlturaMulheres / quantidadeM
+        alert ("A maior altura informada é: " + maiorAltura)
+        alert ("A média das alturas das mulheres é: " + mediaAlturaMulheres)
+        alert ("A quantidade de homens é: " + quantidadeH)
+        alert ("A menor altura entre os homens é: " + menorAlturaHomens)
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+    </head>
+    <body></body>
+</html>
